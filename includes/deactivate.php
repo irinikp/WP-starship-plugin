@@ -1,7 +1,5 @@
 <?php
 
-function star_deactivate_plugin()
-{
-    global $wpdb;
-    $wpdb->query("DELETE FROM `" . $wpdb->prefix . "posts` WHERE post_type='starship'");
+function sw_deactivate_plugin() {
+	wp_clear_scheduled_hook( 'starwars_retrieval_hook' );
 }
